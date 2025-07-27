@@ -17,12 +17,13 @@ export const PeoplePage = () => {
 
     return (
         <form
+            className="max-w-2xl mx-auto p-4 bg-white shadow-md rounded"
             onSubmit={(e) => {
                 e.preventDefault();
                 form.handleSubmit();
             }}
         >
-            <h1>Personal Information</h1>
+            <h1 className="text-2xl">Personal Information</h1>
             <form.AppField
                 name="fullName"
                 children={(field) => <field.TextField label="Full Name" />}

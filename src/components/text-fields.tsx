@@ -5,10 +5,11 @@ export default function TextField({ label }: { label: string }) {
     const field = useFieldContext<string>();
 
     return (
-        <div>
-            <label>
-                <div>{label}</div>
+        <div className="flex flex-row gap-2 items-center p-2">
+            <label className="flex justify-center gap-2 items-center">
+                <div>{label}: </div>
                 <input
+                    className="border border-gray-300 rounded p-2"
                     value={field.state.value}
                     onChange={(e) => field.handleChange(e.target.value)}
                     onBlur={field.handleBlur}

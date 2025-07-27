@@ -6,8 +6,8 @@ export const PersonsFields = withForm({
     ...peopleFormOpts,
     render: ({ form }) => {
         return (
-            <>
-                <h2>Persons</h2>
+            <div className="flex flex-col rounded p-4 bg-gray-100">
+                <h2 className="text-lg">Persons</h2>
                 <form.Field name="persons" mode="array">
                     {(field) => {
                         return (
@@ -23,6 +23,7 @@ export const PersonsFields = withForm({
                                     );
                                 })}
                                 <button
+                                    className="mt-2 bg-blue-500 text-white px-4 py-2 rounded"
                                     onClick={() =>
                                         field.pushValue({ name: "", age: 0 })
                                     }
@@ -34,7 +35,7 @@ export const PersonsFields = withForm({
                         );
                     }}
                 </form.Field>
-            </>
+            </div>
         );
     },
 });
