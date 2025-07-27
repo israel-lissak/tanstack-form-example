@@ -13,7 +13,7 @@ export const FieldGroupPerson = withFieldGroup({
     },
     render: function Render({ group, title }) {
         return (
-            <>
+            <div className="flex flex-col  p-4 bg-white shadow rounded mb-4">
                 <h3>{title}</h3>
                 <group.AppField
                     name="name"
@@ -23,7 +23,7 @@ export const FieldGroupPerson = withFieldGroup({
                     name="age"
                     children={(field) => <field.NumberField label="Age" />}
                 />
-            </>
+            </div>
         );
     },
 });
