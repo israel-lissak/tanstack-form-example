@@ -12,8 +12,12 @@ function SubscribeButton({ label }: { label: string }) {
         <form.Subscribe selector={(state) => state.isSubmitting}>
             {(isSubmitting) => (
                 <button
-                    disabled={isSubmitting}
-                    className=" bg-blue-500 text-white px-4 py-2 rounded disabled:bg-gray-300 disabled:cursor-not-allowed"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        form.handleSubmit();
+                    }}
+                    disabled={isSubmitting || form.state.canSubmit === false}
+                    className=" bg-blue-500 text-white px-4 py-2 rounded disabled:bg-gray-300 cursor-pointer disabled:cursor-not-allowed "
                 >
                     {label}
                 </button>
