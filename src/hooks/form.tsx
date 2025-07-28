@@ -13,7 +13,7 @@ function SubscribeButton({ label }: { label: string }) {
             {(isSubmitting) => (
                 <button
                     disabled={isSubmitting}
-                    className="mt-2 bg-blue-500 text-white px-4 py-2 rounded"
+                    className=" bg-blue-500 text-white px-4 py-2 rounded disabled:bg-gray-300 disabled:cursor-not-allowed"
                 >
                     {label}
                 </button>
