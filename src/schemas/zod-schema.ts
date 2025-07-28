@@ -334,5 +334,3 @@ const example: MainSchemaType = {
         },
     ],
 };
-
-console.log("Example 1 validation:");
