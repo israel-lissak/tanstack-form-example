@@ -1,5 +1,6 @@
 import { useAppForm } from "../../hooks/form.tsx";
 import { AddressFields } from "./address-fields.tsx";
+import { FieldGroupBuildingBlock } from "./buildingBlock-fields.tsx";
 import { FieldGroupEmergencyContact } from "./emergency-contact.tsx";
 import { FieldGroupKrembo } from "./krembo-fieldes.tsx";
 import { PersonsFields } from "./persons.tsx";
@@ -31,6 +32,8 @@ export const PeoplePage = () => {
                 />
 
                 <FieldGroupKrembo form={form} fields="krembo" />
+
+                <FieldGroupBuildingBlock form={form} fields="buildingBlock" />
 
                 <div className="flex items-center gap-2 justify-center">
                     <form.SubscribeButton label="Submit" />

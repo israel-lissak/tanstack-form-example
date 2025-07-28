@@ -26,66 +26,72 @@ export const krembo = z
     ])
     .nullable();
 
-const buildingBlockDef = z.discriminatedUnion("kind", [
-    z.object({
-        kind: z.literal("cake"),
-        power: z.number().nullable().optional(),
-        sugar,
-    }),
+export type KremboType = z.infer<typeof krembo>;
 
-    z.object({
-        kind: z.literal("cookie"),
-        power: z.number().nullable().optional(),
-        sugar,
-        flour,
-        egg_count: eggCount,
-    }),
+export const buildingBlockDef = z
+    .discriminatedUnion("kind", [
+        z.object({
+            kind: z.literal("cake"),
+            power: z.number().nullable().optional(),
+            sugar,
+        }),
 
-    z.object({
-        kind: z.literal("sweet"),
-        power: z.number().nullable().optional(),
-        start_cooking: sugar,
-        end_cooking: sugar,
-        cooking_time: z.number().min(40).max(3000),
-        temperature_gap: flour.optional(),
-        cooking_dwell: z.number().min(100).max(1500).optional(),
-    }),
+        z.object({
+            kind: z.literal("cookie"),
+            power: z.number().nullable().optional(),
+            sugar,
+            flour,
+            egg_count: eggCount,
+        }),
 
-    z.object({
-        kind: z.literal("pancake"),
-        power: z.number().nullable().optional(),
-        path: z.string().regex(/^.*\.(bin|xdat|xhdr)$/),
-        sugar,
-    }),
+        z.object({
+            kind: z.literal("sweet"),
+            power: z.number().nullable().optional(),
+            start_cooking: sugar,
+            end_cooking: sugar,
+            cooking_time: z.number().min(40).max(3000),
+            temperature_gap: flour.optional(),
+            cooking_dwell: z.number().min(100).max(1500).optional(),
+        }),
 
-    z.object({
-        kind: z.literal("american_pancake"),
-        power: z.number().nullable().optional(),
-        path: z.string().regex(/^.*\.(wav|mp4)$/),
-        sugar,
-        flour,
-        krembo,
-    }),
+        z.object({
+            kind: z.literal("pancake"),
+            power: z.number().nullable().optional(),
+            path: z.string().regex(/^.*\.(bin|xdat|xhdr)$/),
+            sugar,
+        }),
 
-    z.object({
-        kind: z.literal("biscuit"),
-        power: z.number().nullable().optional(),
-        sugar,
-        flour,
-        krembo,
-    }),
+        z.object({
+            kind: z.literal("american_pancake"),
+            power: z.number().nullable().optional(),
+            path: z.string().regex(/^.*\.(wav|mp4)$/),
+            sugar,
+            flour,
+            krembo,
+        }),
 
-    z.object({
-        kind: z.literal("brownie"),
-        power: z.number().nullable().optional(),
-        brownie_string: z.string().regex(/^[0-9a-fA-F]+$/),
-        sugar,
-        flour,
-        brownie_time: z.number(),
-        brownie_cooking_time: z.number(),
-        krembo,
-    }),
-]);
+        z.object({
+            kind: z.literal("biscuit"),
+            power: z.number().nullable().optional(),
+            sugar,
+            flour,
+            krembo,
+        }),
+
+        z.object({
+            kind: z.literal("brownie"),
+            power: z.number().nullable().optional(),
+            brownie_string: z.string().regex(/^[0-9a-fA-F]+$/),
+            sugar,
+            flour,
+            brownie_time: z.number(),
+            brownie_cooking_time: z.number(),
+            krembo,
+        }),
+    ])
+    .nullable();
+
+export type BuildingBlockType = z.infer<typeof buildingBlockDef>;
 
 // Forward declaration for recursive type
 type BaseStepType = z.infer<typeof baseStepDef>;
@@ -235,8 +241,6 @@ export default mainSchema;
 // Type inference
 export type MainSchemaType = z.infer<typeof mainSchema>;
 export type SliceType = z.infer<typeof sliceDef>;
-export type BuildingBlockType = z.infer<typeof buildingBlockDef>;
-export type KremboType = z.infer<typeof krembo>;
 
 const example: MainSchemaType = {
     slices: [
