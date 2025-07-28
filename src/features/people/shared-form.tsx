@@ -15,7 +15,6 @@ type FormValues = {
     };
     emergencyContact: {
         fullName: string;
-        phone: string;
     };
     krembo: KremboType;
 };
@@ -33,7 +32,6 @@ export const formSchema = z.object({
     }),
     emergencyContact: z.object({
         fullName: z.string().min(1, "Emergency contact full name is required"),
-        phone: z.string().min(1, "Emergency contact phone is required"),
     }),
     krembo: krembo.nullable().default(null),
 });
@@ -46,7 +44,6 @@ const defaultValues: FormValues = {
     },
     emergencyContact: {
         fullName: "john",
-        phone: "123",
     },
     krembo: {
         krembo_kind: "vanilla",

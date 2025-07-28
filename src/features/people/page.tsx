@@ -25,7 +25,6 @@ export const PeoplePage = () => {
 
                 <AddressFields form={form} />
 
-                <h2>Emergency Contact</h2>
                 <FieldGroupEmergencyContact
                     form={form}
                     fields="emergencyContact"
