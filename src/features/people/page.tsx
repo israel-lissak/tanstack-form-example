@@ -45,6 +45,43 @@ export const PeoplePage = () => {
                         log
                     </button>
                 </div>
+
+                <div className="flex flex-col justify-around mt-4">
+                    <form.Subscribe selector={(state) => state.values}>
+                        {(values) => (
+                            <div className="mt-8 p-4 bg-amber-100 rounded-lg">
+                                <h3 className="font-medium mb-2">
+                                    Form Values:
+                                </h3>
+                                <pre className="text-sm text-gray-600">
+                                    {JSON.stringify(values, null, 2)}
+                                </pre>
+                            </div>
+                        )}
+                    </form.Subscribe>
+                    <form.Subscribe selector={(state) => state.errorMap}>
+                        {(values) => (
+                            <div className="mt-8 p-4 bg-amber-100 rounded-lg">
+                                <h3 className="font-medium mb-2">
+                                    Form Errors:
+                                </h3>
+                                {Object.entries(values).map(
+                                    ([field, errors]) => (
+                                        <div key={field}>
+                                            <pre>
+                                                {JSON.stringify(
+                                                    errors,
+                                                    null,
+                                                    2
+                                                )}
+                                            </pre>
+                                        </div>
+                                    )
+                                )}
+                            </div>
+                        )}
+                    </form.Subscribe>
+                </div>
             </form.AppForm>
         </div>
     );
