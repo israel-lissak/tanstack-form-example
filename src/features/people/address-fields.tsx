@@ -5,8 +5,8 @@ export const AddressFields = withForm({
     ...peopleFormOpts,
     render: ({ form }) => {
         return (
-            <div>
-                <h2>Address</h2>
+            <div className="flex flex-col p-4 bg-gray-100 shadow rounded mb-4">
+                <h2 className="text-lg">Address</h2>
                 <form.AppField
                     name="address.line1"
                     children={(field) => (

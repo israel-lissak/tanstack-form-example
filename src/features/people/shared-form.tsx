@@ -8,9 +8,6 @@ export type Person = {
 };
 
 type FormValues = {
-    fullName: string;
-    email: string;
-    phone: string;
     persons: Array<Person>;
     address: {
         line1: string;
@@ -29,9 +26,6 @@ export const personSchema = z.object({
 });
 
 export const formSchema = z.object({
-    fullName: z.string().min(1, "Full name is required"),
-    email: z.email("Invalid email address"),
-    phone: z.string().min(1, "Phone is required"),
     persons: z.array(personSchema),
     address: z.object({
         line1: z.string().min(1, "Address Line 1 is required"),
@@ -45,9 +39,6 @@ export const formSchema = z.object({
 });
 
 const defaultValues: FormValues = {
-    fullName: "",
-    email: "",
-    phone: "",
     persons: [],
     address: {
         line1: "123 Main St",

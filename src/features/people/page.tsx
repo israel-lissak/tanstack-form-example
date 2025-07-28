@@ -17,21 +17,9 @@ export const PeoplePage = () => {
     });
 
     return (
-        <div className="max-w-2xl mx-auto p-4 bg-white shadow-md rounded">
+        <div className="max-w-2xl m-auto  p-4 bg-white shadow-md rounded">
             <form.AppForm>
-                <h1 className="text-2xl">Personal Information</h1>
-                <form.AppField
-                    name="fullName"
-                    children={(field) => <field.TextField label="Full Name" />}
-                />
-                <form.AppField
-                    name="email"
-                    children={(field) => <field.TextField label="Email" />}
-                />
-                <form.AppField
-                    name="phone"
-                    children={(field) => <field.TextField label="Phone" />}
-                />
+                <h1 className="text-2xl p-2">Personal Information</h1>
 
                 <PersonsFields form={form} />
 

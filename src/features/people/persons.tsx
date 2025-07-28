@@ -6,7 +6,7 @@ export const PersonsFields = withForm({
     ...peopleFormOpts,
     render: ({ form }) => {
         return (
-            <div className="flex flex-col rounded p-4 bg-gray-100">
+            <div className="flex flex-col p-4 bg-gray-100 shadow rounded mb-4">
                 <h2 className="text-lg">Persons</h2>
                 <form.Field name="persons" mode="array">
                     {(field) => {
@@ -18,7 +18,8 @@ export const PersonsFields = withForm({
                                             key={i}
                                             form={form}
                                             fields={`persons[${i}]`}
-                                            title={`Person #${i + 1}`}
+                                            title={`Person ${i + 1}`}
+                                            remove={() => field.removeValue(i)}
                                         />
                                     );
                                 })}
