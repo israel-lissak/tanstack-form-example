@@ -1,11 +1,6 @@
 import { formOptions } from "@tanstack/react-form";
 import z from "zod/v4";
-import {
-    buildingBlockDef,
-    BuildingBlockType,
-    krembo,
-    KremboType,
-} from "../../schemas/zod-schema";
+import { buildingBlockDef, BuildingBlockType } from "../../schemas/zod-schema";
 
 export type Person = {
     name: string;
@@ -18,10 +13,7 @@ type FormValues = {
         line1: string;
         city: string;
     };
-    emergencyContact: {
-        fullName: string;
-    };
-    krembo: KremboType;
+
     buildingBlock: BuildingBlockType;
 };
 
@@ -36,10 +28,7 @@ export const formSchema = z.object({
         line1: z.string().min(1, "Address Line 1 is required"),
         city: z.string().min(1, "City is required"),
     }),
-    emergencyContact: z.object({
-        fullName: z.string().min(1, "Emergency contact full name is required"),
-    }),
-    krembo: krembo.nullable().default(null),
+
     buildingBlock: buildingBlockDef.nullable().default(null),
 });
 
@@ -49,10 +38,6 @@ const defaultValues: FormValues = {
         line1: "123 Main St",
         city: "New York",
     },
-    emergencyContact: {
-        fullName: "john",
-    },
-    krembo: null,
     buildingBlock: null,
 };
 
