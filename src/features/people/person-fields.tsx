@@ -1,4 +1,4 @@
-import { withFieldGroup } from "../../hooks/form";
+import { withFieldGroup } from "../../hooks/form.tsx";
 import { Person } from "./shared-form.tsx";
 
 const defaultValues: Person = {

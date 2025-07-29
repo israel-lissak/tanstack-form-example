@@ -2,7 +2,7 @@ import { useAppForm } from "../../hooks/form.tsx";
 import { AddressFields } from "./address-fields.tsx";
 import { FieldGroupBuildingBlock } from "./buildingBlock-fields.tsx";
 import { FieldGroupEmergencyContact } from "./emergency-contact.tsx";
-import { FieldGroupKrembo } from "./krembo-fieldes.tsx";
+import { FieldGroupKrembo } from "./krembo-fields.tsx";
 import { PersonsFields } from "./persons.tsx";
 import { formSchema, peopleFormOpts } from "./shared-form.tsx";
 

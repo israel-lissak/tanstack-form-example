@@ -1,6 +1,6 @@
 import { withFieldGroup } from "../../hooks/form.tsx";
 import { BuildingBlockType } from "../../schemas/zod-schema.ts";
-import { FieldGroupKrembo } from "./krembo-fieldes.tsx";
+import { FieldGroupKrembo } from "./krembo-fields.tsx";
 
 const defaultValues: BuildingBlockType = null as BuildingBlockType;
 
@@ -29,7 +29,7 @@ export const FieldGroupBuildingBlock = withFieldGroup({
                                     "biscuit",
                                     "brownie",
                                 ]}
-                                onValueChange={() => {
+                                onValueChange={(value) => {
                                     // Reset all fields when kind changes
                                     group.resetField("sugar");
                                     group.resetField("flour");

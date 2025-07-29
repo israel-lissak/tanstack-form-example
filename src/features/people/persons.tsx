@@ -1,5 +1,5 @@
 import { withForm } from "../../hooks/form.tsx";
-import { FieldGroupPerson } from "./person-fieldes.tsx";
+import { FieldGroupPerson } from "./person-fields.tsx";
 import { peopleFormOpts } from "./shared-form.tsx";
 
 export const PersonsFields = withForm({
