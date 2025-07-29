@@ -36,13 +36,11 @@ export const buildingBlockDef = z
     .discriminatedUnion("kind", [
         z.object({
             kind: z.literal("cake"),
-            power: z.number().nullable().optional(),
             sugar,
         }),
 
         z.object({
             kind: z.literal("cookie"),
-            power: z.number().nullable().optional(),
             sugar,
             flour,
             egg_count: eggCount,
@@ -50,7 +48,6 @@ export const buildingBlockDef = z
 
         z.object({
             kind: z.literal("sweet"),
-            power: z.number().nullable().optional(),
             start_cooking: sugar,
             end_cooking: sugar,
             cooking_time: z.number().min(40).max(3000),
@@ -60,14 +57,12 @@ export const buildingBlockDef = z
 
         z.object({
             kind: z.literal("pancake"),
-            power: z.number().nullable().optional(),
             path: z.string().regex(/^.*\.(bin|xdat|xhdr)$/),
             sugar,
         }),
 
         z.object({
             kind: z.literal("american_pancake"),
-            power: z.number().nullable().optional(),
             path: z.string().regex(/^.*\.(wav|mp4)$/),
             sugar,
             flour,
@@ -76,7 +71,6 @@ export const buildingBlockDef = z
 
         z.object({
             kind: z.literal("biscuit"),
-            power: z.number().nullable().optional(),
             sugar,
             flour,
             krembo,
@@ -84,7 +78,6 @@ export const buildingBlockDef = z
 
         z.object({
             kind: z.literal("brownie"),
-            power: z.number().nullable().optional(),
             brownie_string: z.string().regex(/^[0-9a-fA-F]+$/),
             sugar,
             flour,

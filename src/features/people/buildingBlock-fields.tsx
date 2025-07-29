@@ -31,7 +31,6 @@ export const FieldGroupBuildingBlock = withFieldGroup({
                                 ]}
                                 onValueChange={() => {
                                     // Reset all fields when kind changes
-                                    group.resetField("power");
                                     group.resetField("sugar");
                                     group.resetField("flour");
                                     group.resetField("egg_count");
@@ -48,12 +47,6 @@ export const FieldGroupBuildingBlock = withFieldGroup({
                             {kind === "cake" && (
                                 <div className="flex flex-col bg-white p-2 rounded">
                                     <group.AppField
-                                        name="power"
-                                        children={(field) => (
-                                            <field.NumberField label="Power" />
-                                        )}
-                                    />
-                                    <group.AppField
                                         name="sugar"
                                         children={(field) => (
                                             <field.NumberField label="Sugar" />
@@ -63,12 +56,6 @@ export const FieldGroupBuildingBlock = withFieldGroup({
                             )}
                             {kind === "cookie" && (
                                 <div className="flex flex-col bg-white p-2 rounded">
-                                    <group.AppField
-                                        name="power"
-                                        children={(field) => (
-                                            <field.NumberField label="Power" />
-                                        )}
-                                    />
                                     <group.AppField
                                         name="sugar"
                                         children={(field) => (
@@ -91,12 +78,6 @@ export const FieldGroupBuildingBlock = withFieldGroup({
                             )}
                             {kind === "sweet" && (
                                 <div className="flex flex-col bg-white p-2 rounded">
-                                    <group.AppField
-                                        name="power"
-                                        children={(field) => (
-                                            <field.NumberField label="Power" />
-                                        )}
-                                    />
                                     <group.AppField
                                         name="start_cooking"
                                         children={(field) => (
@@ -132,12 +113,6 @@ export const FieldGroupBuildingBlock = withFieldGroup({
                             {kind === "pancake" && (
                                 <div className="flex flex-col bg-white p-2 rounded">
                                     <group.AppField
-                                        name="power"
-                                        children={(field) => (
-                                            <field.NumberField label="Power" />
-                                        )}
-                                    />
-                                    <group.AppField
                                         name="path"
                                         children={(field) => (
                                             <field.TextField label="Path" />
@@ -153,12 +128,6 @@ export const FieldGroupBuildingBlock = withFieldGroup({
                             )}
                             {kind === "american_pancake" && (
                                 <div className="flex flex-col bg-white p-2 rounded">
-                                    <group.AppField
-                                        name="power"
-                                        children={(field) => (
-                                            <field.NumberField label="Power" />
-                                        )}
-                                    />
                                     <group.AppField
                                         name="path"
                                         children={(field) => (
@@ -186,12 +155,6 @@ export const FieldGroupBuildingBlock = withFieldGroup({
                             {kind === "biscuit" && (
                                 <div className="flex flex-col bg-white p-2 rounded">
                                     <group.AppField
-                                        name="power"
-                                        children={(field) => (
-                                            <field.NumberField label="Power" />
-                                        )}
-                                    />
-                                    <group.AppField
                                         name="sugar"
                                         children={(field) => (
                                             <field.NumberField label="Sugar" />
@@ -211,12 +174,6 @@ export const FieldGroupBuildingBlock = withFieldGroup({
                             )}
                             {kind === "brownie" && (
                                 <div className="flex flex-col bg-white p-2 rounded">
-                                    <group.AppField
-                                        name="power"
-                                        children={(field) => (
-                                            <field.NumberField label="Power" />
-                                        )}
-                                    />
                                     <group.AppField
                                         name="sugar"
                                         children={(field) => (

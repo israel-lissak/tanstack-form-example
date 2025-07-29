@@ -243,7 +243,6 @@
 						"kind": {
 							"const": "cake"
 						},
-						"power": true,
 						"sugar": {
 							"$ref": "#/definitions/sugar"
 						}
@@ -261,7 +260,6 @@
 						"kind": {
 							"const": "cookie"
 						},
-						"power": true,
 						"sugar": {
 							"$ref": "#/definitions/sugar"
 						},
@@ -285,7 +283,6 @@
 						"kind": {
 							"const": "sweet"
 						},
-						"power": true,
 						"start_cooking": {
 							"title": "Start Cooking",
 							"$ref": "#/definitions/sugar"
@@ -323,7 +320,6 @@
 						"kind": {
 							"const": "pancake"
 						},
-						"power": true,
 						"path": {
 							"title": "Path to the pancake",
 							"type": "string",
@@ -347,7 +343,6 @@
 						"kind": {
 							"const": "american_pancake"
 						},
-						"power": true,
 						"path": {
 							"title": "Path to the pancake",
 							"type": "string",
@@ -376,7 +371,6 @@
 						"kind": {
 							"const": "biscuit"
 						},
-						"power": true,
 						"sugar": {
 							"$ref": "#/definitions/sugar"
 						},
@@ -403,7 +397,6 @@
 						"kind": {
 							"const": "brownie"
 						},
-						"power": true,
 						"brownie_string": {
 							"title": "Brownie String",
 							"type": "string",
