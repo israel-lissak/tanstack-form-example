@@ -52,15 +52,8 @@ const defaultValues: FormValues = {
     emergencyContact: {
         fullName: "john",
     },
-    krembo: {
-        krembo_kind: "vanilla",
-        wrap: 0,
-    },
-    buildingBlock: {
-        kind: "cake",
-        power: null,
-        sugar: 1000,
-    },
+    krembo: null,
+    buildingBlock: null,
 };
 
 export const peopleFormOpts = formOptions({
