@@ -30,12 +30,118 @@ export const FieldGroupBuildingBlock = withFieldGroup({
                                     "brownie",
                                 ]}
                                 onValueChange={(value) => {
-                                    // Reset all fields when kind changes
-                                    group.resetField("sugar");
-                                    group.resetField("flour");
-                                    group.resetField("egg_count");
-                                    group.resetField("krembo");
-                                    group.resetField("path");
+                                    // Reset krembo values when kind changes
+                                    if (value === "cake") {
+                                        group.deleteField("flour");
+                                        group.deleteField("egg_count");
+                                        group.deleteField("krembo");
+                                        group.deleteField("path");
+                                        group.deleteField("start_cooking");
+                                        group.deleteField("end_cooking");
+                                        group.deleteField("cooking_time");
+                                        group.deleteField("temperature_gap");
+                                        group.deleteField("cooking_dwell");
+                                        group.deleteField("brownie_string");
+                                        group.deleteField("brownie_time");
+                                        group.deleteField(
+                                            "brownie_cooking_time"
+                                        );
+                                    }
+                                    if (value === "cookie") {
+                                        group.deleteField("krembo");
+                                        group.deleteField("path");
+                                        group.deleteField("start_cooking");
+                                        group.deleteField("end_cooking");
+                                        group.deleteField("cooking_time");
+                                        group.deleteField("temperature_gap");
+                                        group.deleteField("cooking_dwell");
+                                        group.deleteField("brownie_string");
+                                        group.deleteField("brownie_time");
+                                        group.deleteField(
+                                            "brownie_cooking_time"
+                                        );
+                                    }
+                                    if (value === "sweet") {
+                                        group.deleteField("sugar");
+                                        group.deleteField("flour");
+                                        group.deleteField("egg_count");
+                                        group.deleteField("krembo");
+                                        group.deleteField("path");
+                                        group.deleteField("brownie_string");
+                                        group.deleteField("brownie_time");
+                                        group.deleteField(
+                                            "brownie_cooking_time"
+                                        );
+                                    }
+                                    if (value === "pancake") {
+                                        group.deleteField("flour");
+                                        group.deleteField("egg_count");
+                                        group.deleteField("krembo");
+                                        group.deleteField("start_cooking");
+                                        group.deleteField("end_cooking");
+                                        group.deleteField("cooking_time");
+                                        group.deleteField("temperature_gap");
+                                        group.deleteField("cooking_dwell");
+                                        group.deleteField("brownie_string");
+                                        group.deleteField("brownie_time");
+                                        group.deleteField(
+                                            "brownie_cooking_time"
+                                        );
+                                    }
+                                    if (value === "american_pancake") {
+                                        group.deleteField("egg_count");
+                                        group.deleteField("start_cooking");
+                                        group.deleteField("end_cooking");
+                                        group.deleteField("cooking_time");
+                                        group.deleteField("temperature_gap");
+                                        group.deleteField("cooking_dwell");
+                                        group.deleteField("brownie_string");
+                                        group.deleteField("brownie_time");
+                                        group.deleteField(
+                                            "brownie_cooking_time"
+                                        );
+                                    }
+                                    if (value === "biscuit") {
+                                        group.deleteField("egg_count");
+                                        group.deleteField("path");
+                                        group.deleteField("start_cooking");
+                                        group.deleteField("end_cooking");
+                                        group.deleteField("cooking_time");
+                                        group.deleteField("temperature_gap");
+                                        group.deleteField("cooking_dwell");
+                                        group.deleteField("brownie_string");
+                                        group.deleteField("brownie_time");
+                                        group.deleteField(
+                                            "brownie_cooking_time"
+                                        );
+                                    }
+                                    if (value === "brownie") {
+                                        group.deleteField("egg_count");
+                                        group.deleteField("path");
+                                        group.deleteField("start_cooking");
+                                        group.deleteField("end_cooking");
+                                        group.deleteField("cooking_time");
+                                        group.deleteField("temperature_gap");
+                                        group.deleteField("cooking_dwell");
+                                    }
+                                    // Reset all fields if value is null
+                                    if (value === null) {
+                                        group.deleteField("sugar");
+                                        group.deleteField("flour");
+                                        group.deleteField("egg_count");
+                                        group.deleteField("krembo");
+                                        group.deleteField("path");
+                                        group.deleteField("start_cooking");
+                                        group.deleteField("end_cooking");
+                                        group.deleteField("cooking_time");
+                                        group.deleteField("temperature_gap");
+                                        group.deleteField("cooking_dwell");
+                                        group.deleteField("brownie_string");
+                                        group.deleteField("brownie_time");
+                                        group.deleteField(
+                                            "brownie_cooking_time"
+                                        );
+                                    }
                                 }}
                             />
                         )}

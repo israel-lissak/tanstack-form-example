@@ -23,9 +23,16 @@ export const FieldGroupKrembo = withFieldGroup({
                                     // Reset mocha-specific fields
                                     group.deleteField("code");
                                     group.deleteField("crackles");
-                                } else if (value === "mocha") {
+                                }
+                                if (value === "mocha") {
                                     // Reset vanilla-specific fields
                                     group.deleteField("wrap");
+                                }
+                                if (value === null) {
+                                    // Reset all krembo fields if value is null
+                                    group.deleteField("wrap");
+                                    group.deleteField("code");
+                                    group.deleteField("crackles");
                                 }
                             }}
                         />
