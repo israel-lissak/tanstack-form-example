@@ -1,5 +1,5 @@
 import { useFieldContext } from "../hooks/form-context.tsx";
-import { FieldInfo } from "./FieldInfo.tsx";
+import { FieldErrorMessage } from "./FieldErrorMessage.tsx";
 
 export default function TextField({ label }: { label: string }) {
     const field = useFieldContext<string>();
@@ -10,12 +10,13 @@ export default function TextField({ label }: { label: string }) {
                 <div>{label}: </div>
                 <input
                     className="border border-gray-300 rounded p-2"
+                    placeholder={`Insert ${label}`}
                     value={field.state.value}
                     onChange={(e) => field.handleChange(e.target.value)}
                     onBlur={field.handleBlur}
                 />
             </label>
-            <FieldInfo field={field} />
+            <FieldErrorMessage field={field} />
         </div>
     );
 }

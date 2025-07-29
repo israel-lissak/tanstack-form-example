@@ -1,5 +1,5 @@
 import { useFieldContext } from "../hooks/form-context.tsx";
-import { FieldInfo } from "./FieldInfo.tsx";
+import { FieldErrorMessage } from "./FieldErrorMessage.tsx";
 
 /**
  * CheckboxField component for rendering a checkbox input with label and error handling.
@@ -20,7 +20,7 @@ export default function CheckboxField({ label }: { label: string }) {
                     className="h-6 w-6"
                 />
             </label>
-            <FieldInfo field={field} />
+            <FieldErrorMessage field={field} />
         </div>
     );
 }

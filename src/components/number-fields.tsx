@@ -1,5 +1,5 @@
 import { useFieldContext } from "../hooks/form-context.tsx";
-import { FieldInfo } from "./FieldInfo.tsx";
+import { FieldErrorMessage } from "./FieldErrorMessage.tsx";
 
 export default function NumberField({ label }: { label: string }) {
     const field = useFieldContext<number>();
@@ -12,11 +12,12 @@ export default function NumberField({ label }: { label: string }) {
                     className="border border-gray-300 rounded p-2"
                     value={field.state.value}
                     type="number"
+                    placeholder={`Insert ${label}`}
                     onChange={(e) => field.handleChange(Number(e.target.value))}
                     onBlur={field.handleBlur}
                 />
             </label>
-            <FieldInfo field={field} />
+            <FieldErrorMessage field={field} />
         </div>
     );
 }
