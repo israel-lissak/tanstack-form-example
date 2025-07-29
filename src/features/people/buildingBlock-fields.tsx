@@ -10,14 +10,13 @@ export const FieldGroupBuildingBlock = withFieldGroup({
     render: function Render({ group }) {
         return (
             <div className="flex flex-col p-4 bg-gray-100 shadow rounded mb-4">
-                <div className="flex items-center">
-                    {/* keep the space */}
-                    <h3>Building Block Kind:</h3>
+                <div>
+                    <h3>Building Block</h3>
                     <group.AppField
                         name="kind"
                         children={(field) => (
                             <field.SelectField
-                                label=""
+                                label="Building Block Kind"
                                 getOptionLabel={(option: any) =>
                                     option as string
                                 }
@@ -32,12 +31,12 @@ export const FieldGroupBuildingBlock = withFieldGroup({
                                 ]}
                                 onValueChange={() => {
                                     // Reset all fields when kind changes
-                                    group.deleteField("power");
-                                    group.deleteField("sugar");
-                                    group.deleteField("flour");
-                                    group.deleteField("egg_count");
-                                    group.deleteField("krembo");
-                                    group.deleteField("path");
+                                    group.resetField("power");
+                                    group.resetField("sugar");
+                                    group.resetField("flour");
+                                    group.resetField("egg_count");
+                                    group.resetField("krembo");
+                                    group.resetField("path");
                                 }}
                             />
                         )}
