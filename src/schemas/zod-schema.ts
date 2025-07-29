@@ -3,7 +3,11 @@ import * as z from "zod/v4";
 // Base definitions
 const variationDef = z.enum(["single", "multi", "cyclic"]);
 
-const sugar = z.number().int().min(1000).max(6000);
+const sugar = z
+    .number()
+    .int()
+    .min(1000, "Sugar must be at least 1000 grams")
+    .max(6000, "Sugar must be at most 6000 grams");
 const flour = z.number().int().min(0).max(164);
 const eggCount = z.number().int().min(0).max(164);
 
