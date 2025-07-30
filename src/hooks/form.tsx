@@ -9,14 +9,18 @@ import TextField from "../components/text-fields.tsx";
 function SubscribeButton({ label }: { label: string }) {
     const form = useFormContext();
     return (
-        <form.Subscribe selector={(state) => state.isSubmitting}>
-            {(isSubmitting) => (
+        <form.Subscribe selector={(state) => state.isPristine}>
+            {(isPristine) => (
                 <button
                     onClick={(e) => {
                         e.preventDefault();
                         form.handleSubmit();
                     }}
-                    disabled={isSubmitting || form.state.canSubmit === false}
+                    disabled={
+                        isPristine ||
+                        form.state.canSubmit === false ||
+                        form.state.errors.length > 0
+                    }
                     className=" bg-blue-500 text-white px-4 py-2 rounded disabled:bg-gray-300 cursor-pointer disabled:cursor-not-allowed "
                 >
                     {label}
