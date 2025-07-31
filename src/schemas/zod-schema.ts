@@ -165,7 +165,7 @@ const sliceTechniqueInCyclic = z.discriminatedUnion("variation", [
 ]);
 
 // Main schema with JSON Schema matching logic
-const mainSchema = z.object({
+export const mainSchema = z.object({
     slices: z.array(sliceDef).min(1, "At least one slice is required"),
 });
 

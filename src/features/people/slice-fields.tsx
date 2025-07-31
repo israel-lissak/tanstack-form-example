@@ -1,15 +1,17 @@
 import { withFieldGroup } from "../../hooks/form.tsx";
-import { Person } from "./shared-form.tsx";
+import { BuildingBlockType, SliceType } from "../../schemas/zod-schema.ts";
+import { FieldGroupBuildingBlock } from "./buildingBlock-fields.tsx";
 
-const defaultValues: Person = {
-    name: "",
-    age: 0,
+const defaultValues: SliceType = {
+    variation: "single",
+    duration: 0,
+    building_block: null as unknown as BuildingBlockType,
 };
 
-export const FieldGroupPerson = withFieldGroup({
+export const FieldGroupSlice = withFieldGroup({
     defaultValues: defaultValues,
     props: {
-        title: "Person",
+        title: "Slice",
         remove: () => {},
     },
     render: function Render({ group, title, remove }) {
@@ -26,12 +28,13 @@ export const FieldGroupPerson = withFieldGroup({
                     </button>
                 </div>
                 <group.AppField
-                    name="name"
-                    children={(field) => <field.TextField label="Name" />}
+                    name="duration"
+                    children={(field) => <field.NumberField label="Duration" />}
                 />
-                <group.AppField
-                    name="age"
-                    children={(field) => <field.NumberField label="Age" />}
+                <FieldGroupBuildingBlock
+                    form={group}
+                    fields="building_block"
+                    key="building_block"
                 />
             </div>
         );

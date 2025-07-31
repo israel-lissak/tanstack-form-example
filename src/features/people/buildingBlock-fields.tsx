@@ -2,7 +2,7 @@ import { withFieldGroup } from "../../hooks/form.tsx";
 import { BuildingBlockType } from "../../schemas/zod-schema.ts";
 import { FieldGroupKrembo } from "./krembo-fields.tsx";
 
-const defaultValues: BuildingBlockType = null as BuildingBlockType;
+const defaultValues: BuildingBlockType = null as unknown as BuildingBlockType;
 
 export const FieldGroupBuildingBlock = withFieldGroup({
     defaultValues: defaultValues,

@@ -3,8 +3,8 @@ import { useState } from "react";
 import { useAppForm } from "../../hooks/form.tsx";
 import { AddressFields } from "./address-fields.tsx";
 import { FieldGroupBuildingBlock } from "./buildingBlock-fields.tsx";
-import { PersonsFields } from "./persons.tsx";
 import { formSchema, peopleFormOpts } from "./shared-form.tsx";
+import { SlicesFields } from "./slices.tsx";
 
 export const PeoplePage = () => {
     const [currentPage, setCurrentPage] = useState(0);
@@ -19,7 +19,7 @@ export const PeoplePage = () => {
     });
 
     const pages = [
-        <PersonsFields form={form} key="persons" />,
+        <SlicesFields form={form} key="slices" />,
         <AddressFields form={form} key="address" />,
         <FieldGroupBuildingBlock
             form={form}
